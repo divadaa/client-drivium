@@ -1,0 +1,43 @@
+.carCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 270px;
+  height: 280px;
+  background-color: var(--color-offwhite-search);
+  padding: 10px;
+  row-gap: 5px;
+  border-radius: 5px;
+}
+.productCard__cardImg {
+  width: 100%;
+  height: 75px;
+}
+
+.carCard__brand {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 12px;
+  font-weight: 100;
+  text-emphasis-color: black;
+}
+
+.carCard__model {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 12px;
+  font-weight: 100;
+  text-emphasis-color: black;
+}
+
+.carCard__plate {
+  text-transform: capitalize;
+}
+
+.carCard__fuelType {
+  text-transform: capitalize;
+}
+.carCard__pricePerDay {
+  font-size: 15px;
+  font-weight: 200;
+}
