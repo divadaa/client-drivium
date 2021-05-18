@@ -1,11 +1,33 @@
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import CarList from "../components/CarList";
+import "../styles/home.scss";
 
-export default function Home() {
+const URL = "http://localhost:4000/api/car";
+
+function Car({}) {
+  const [carList, setCarList] = useState([]);
+
+  function loadCar() {
+    fetch(URL)
+      .then((res) => res.json())
+      .then(({ data }) => {
+        // La propiedad data que hemos destructurado es mi array de coches
+
+        setCarList([...carList, ...data]);
+      });
+  }
+
+  useEffect(() => {
+    loadCar();
+  }, []);
+
   return (
-    <div className="main">
-      <h1>Bienvenid@ a Drivium</h1>
+    <section className="main">
+      <h3>Estos son los Coches</h3>
 
-      <Link to="/login">Quiero iniciar sesión</Link>
-    </div>
+      <CarList list={carList} loadCar={loadCar} />
+    </section>
   );
 }
+
+export default Car;

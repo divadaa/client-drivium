@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 
 import { UserContext } from "../../context/User";
 
+import Button from '../Button'
+
 import "./styles.scss";
 
 export default function LoginForm() {
@@ -48,6 +50,11 @@ export default function LoginForm() {
           <p>Password field is required</p>
         ) : null}
         <br />
+        
+        <div>
+          <Button onClick={login} text="Login" />
+        </div>
+        
         <button type="submit">Login</button>
       </form>
 

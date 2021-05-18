@@ -23,7 +23,7 @@ export default function Booking() {
   }, 0);
 
   return (
-    <div className="App">
+    <div className="productCard__booking">
       <h1>Reservas</h1>
 
       {booking.map(({ id, price }) => (

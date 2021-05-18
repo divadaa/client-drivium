@@ -1,8 +1,11 @@
-import CarCard from '../components/CardCar';
+import { useState } from "react";
+import CarCard from "../components/CarList";
 
-const URL = '';
+const URL = "http://localhost:4000/";
 
-function Car({ CarCard, setCarCard }) {
+function Car({}) {
+  const [carCard, setCarCard] = useState([]);
+
   function loadCar() {
     fetch(`${URL}${CarCard.length + 1}`)
       .then((res) => res.json())
@@ -17,7 +20,7 @@ function Car({ CarCard, setCarCard }) {
           picture: data.picture.front_default,
         };
 
-        setCarCard([...CarCard, carData]);
+        setCarCard([...carCard, carData]);
       });
   }
 
@@ -25,7 +28,7 @@ function Car({ CarCard, setCarCard }) {
     <section>
       <h3>Aquí está tu coche</h3>
 
-      <CarCard list={CarCard} loadCar={loadCar} />
+      <CarCard list={carCard} loadCar={loadCar} />
     </section>
   );
 }

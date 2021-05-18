@@ -1,4 +1,14 @@
 
-
+.productCard__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    height: 320px;
+    background-color: var(--color-offwhite-search);
+    padding: 12px;
+    row-gap: 7px;
+    border-radius: 7px;
+  }
 
 
