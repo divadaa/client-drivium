@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   getProfile,
   postLogin,
   postLogout,
-  postRegister
-} from '../services/auth';
-
+  postRegister,
+} from "../services/auth";
 
 export const UserContext = React.createContext(null);
-
 
 export function useUser() {
   const [user, setUser] = useState(null);
@@ -29,7 +27,7 @@ export function useUser() {
 
   async function login(email, password) {
     postLogin(email, password).then((userData) => {
-      setUser({ ...(user || {}), ...userData });
+      setUser(userData);
     });
   }
 

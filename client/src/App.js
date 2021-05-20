@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import { UserContext, useUser } from './context/User';
 
-import Car from './pages/car';
+// import Car from './pages/car';
 import Home from './pages/home';
 import Login from './pages/login';
 import Profile from './pages/profile';
@@ -30,7 +30,7 @@ function App() {
               </WithAuthentication>
             </Route>
 
-            <Route exact path="/car/:id">
+            <Route exact path="/car/:carId">
               {/* 2. 3. Traer un solo coche por su id y permitir crear un booking */}
               <CarId />
             </Route>

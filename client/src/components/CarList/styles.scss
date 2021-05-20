@@ -1,4 +1,14 @@
 .CarList {
+  position: relative;
+  width: 300px;
+  height: fit-content;
+  border-radius: 50px;
+  border-color: black;
+  background-origin: padding-box;
+  display: inline-block;
+  margin:auto;
+  padding:0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -7,42 +17,31 @@
   padding: 10px;
   row-gap: 5px;
   border-radius: 5px;
+}
+
 
   img {
-    width: 200px;
+    width: 150px;
     height: auto;
+    box-sizing: border-box;
+    background-origin: padding-box;
   }
-}
 
-.productCard__cardImg {
-  width: 100%;
-  height: 75px;
-}
+  li {
 
-.carCard__brand {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 12px;
-  font-weight: 100;
-  text-emphasis-color: black;
-}
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    border-color: aqua;
+    background-origin: padding-box;
+    background:url("https://img2.freepng.es/20180805/zkj/kisspng-image-fifa-video-portable-network-graphics-gif-pack-para-edici%C3%B3n-triviasfutbol-carta-fifa-cre-5b675ea1361fe4.8945268315335010892217.jpg");
 
-.carCard__model {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 12px;
-  font-weight: 100;
-  text-emphasis-color: black;
-}
+    // background:url("https://media.istockphoto.com/photos/asphalt-road-picture-id904781432?k=6&m=904781432&s=612x612&w=0&h=NhIDUmYE6OYpw-nH-MUU_Axwfr48SEFrmuhX9CaB9nQ=") no-repeat center center / cover;
 
-.carCard__plate {
-  text-transform: capitalize;
-}
 
-.carCard__fuelType {
-  text-transform: capitalize;
-}
-.carCard__pricePerDay {
-  font-size: 15px;
-  font-weight: 200;
-}
+  }
+
+
+
+
+

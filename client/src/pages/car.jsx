@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CarCard from "../components/CarList";
 
-const URL = "http://localhost:4000/";
+const URL = "http://localhost:4000/api/car";
 
 function Car({}) {
   const [carCard, setCarCard] = useState([]);
