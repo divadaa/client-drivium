@@ -37,7 +37,7 @@ function App() {
 
             {/* 4. Crear ruta protegida /booking que liste los bookings del user */}
 
-            <Route exact path="/booking">
+            <Route exact path="/bookings">
               <WithAuthentication>
                 <Booking />
               </WithAuthentication>

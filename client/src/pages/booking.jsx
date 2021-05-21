@@ -6,40 +6,32 @@ import CardCar from "../components/CarList";
 import { deleteCar, addCar } from "../services/bookings";
 import Button from "../components/Button";
 
-
-
 export default function Booking() {
-  const [carSaved, setCarSaved] = useState([]);
+  const [bookings, setBookings] = useState([]);
   const { user } = useContext(UserContext);
 
-  const deleteCarFromList = (id) => {
-    const newRemovedFavorites = carSaved.filter((item) => item._id !== id);
-    setCarSaved(newRemovedFavorites);
-  };
-
-  const handleRemoveCar = (idToBeRemoved) => {
-    deleteCarFromList(idToBeRemoved);
-    deleteCar(idToBeRemoved);
-  };
-
   useEffect(() => {
-    axios.get("http://localhost:4000/booking").then((res) => {
-      setCarSaved(res.data.data);
+    axios
+      .get("http://localhost:4000/api/booking", { withCredentials: true })
+      .then((res) => {
+        setBookings(res.data.data);
+      });
+  }, []);
 
-      console.log(carSaved);
-    });
-  }, [user]);
-
+  console.log("MIS BOOKINGS", bookings);
   if (user) {
     return (
       <div className="booking">
-        <h3>Mi reserva</h3>
+        <h3>Mis bookings</h3>
 
+        {/* bookings.map */}
+        {/* 
         <div className="carSavedBooking">
           {carSaved.map((p) => (
             <div key={p.plate}>
               <CardCar
-                picture={p.pictures}x
+                picture={p.pictures}
+                x
                 brand={p.brand}
                 model={p.model}
                 fuel={p.fuelType}
@@ -57,7 +49,7 @@ export default function Booking() {
 
         <div>
           <Button onClick={handleRemoveCar} text="No quiero este coche" />
-        </div>
+        </div> */}
       </div>
     );
   } else {

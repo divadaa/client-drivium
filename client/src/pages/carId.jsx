@@ -3,13 +3,16 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link, useHistory } from "react-router-dom";
-
+import format from "date-fns/format";
+import addDays from "date-fns/addDays";
 import CarList from "../components/CarList";
 
 const URL = "http://localhost:4000/api";
 
 export default function CarsPage() {
   const [product, setProduct] = useState(null);
+  const [dateStart, setDateStart] = useState("");
+  const [dateEnd, setDateEnd] = useState("");
   const { carId } = useParams();
   const history = useHistory();
 
@@ -22,40 +25,20 @@ export default function CarsPage() {
       .catch((err) => {});
   }, [carId]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${URL}/bookingId/${carId}`)
-  //     .then((res) => {
-  //       setProduct(res.data.data);
-  //     })
-  //     .catch((err) => {
-  //       history.goBack();
-  //     });
-  // }, [history, carId]);
+  // CREAR POST BOOKING AQUI
 
-  // return (
-  //   <section className="main">
-  //     <h3>Estos son los Coches</h3>
-
-  //     <CarList list={car} loadCar={carId} />
-  //   </section>
-  // );
-
-  console.log(product);
-
-  function createBooking() {
-
-    // añadir input de tipo fecha que guarden las fechas de inicio y final de mi reserva en un state
-    // estas fechas las voy a usar como date start y date end.
-
+  function postBooking() {
     axios
-      .post(`${URL}/booking`,{ productId: product._id, dateStart: new Date(), dateEnd: new Date() },{withCredentials:true})
+      .post(
+        `${URL}/booking`,
+        { productId: product._id, dateStart: dateStart, dateEnd: dateEnd },
+        { withCredentials: true }
+      )
       .then((res) => {
         console.log(res.data.data);
-        //aquí tengo que hacer el push para ver el listado de booking. History push ... url
+        history.push('/bookings');
       })
       .catch((err) => {});
-
   }
 
   return (
@@ -77,7 +60,28 @@ export default function CarsPage() {
         ) : null}
       </div>
       {/* <Link to="/booking">Quiero reservar este coche</Link> */}
-      <button onClick={createBooking}>booking</button>
+      <input
+        value={dateStart}
+        type="date"
+        min={format(addDays(new Date(), 1), "yyyy-MM-dd")}
+        onChange={(e) => {
+          setDateStart(e.target.value);
+        }}
+      />
+
+      <input
+        disabled={!dateStart}
+        value={dateEnd}
+        type="date"
+        min={
+          dateStart ? format(addDays(new Date(dateStart), 1), "yyyy-MM-dd") : ""
+        }
+        onChange={(e) => {
+          setDateEnd(e.target.value);
+        }}
+      />
+
+      <button onClick={postBooking}>booking</button>
     </div>
   );
 }
