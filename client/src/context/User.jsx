@@ -15,10 +15,8 @@ export function useUser() {
   // Este useEffect intenta autologearnos al abrir la web
   useEffect(() => {
     getProfile()
-      .then((id) => {
-        if (id) {
-          setUser({ id });
-        }
+      .then((user) => {
+          setUser(user);
       })
       .finally(() => {
         setLoading(false);

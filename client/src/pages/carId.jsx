@@ -59,7 +59,7 @@ export default function CarsPage() {
           </div>
         ) : null}
       </div>
-      {/* <Link to="/booking">Quiero reservar este coche</Link> */}
+      
       <input
         value={dateStart}
         type="date"

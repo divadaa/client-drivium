@@ -8,6 +8,7 @@ import Profile from './pages/profile';
 import WithAuthentication from './components/hocs/WithAuthentication';
 import CarId from './pages/carId';
 import Booking from './pages/booking';
+import Footer from './components/Footer';
 
 import './App.css';
 
@@ -47,7 +48,8 @@ function App() {
             <Route exact path="/login">
               <Login /> 
             </Route>
-          </Switch>      
+          </Switch>  
+          <Footer />    
       </div>
     </UserContext.Provider>
   );

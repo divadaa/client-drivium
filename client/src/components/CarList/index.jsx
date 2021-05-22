@@ -11,7 +11,7 @@ function CarList({ list, loadCar}) {
     <>
       <ul className="CarList">
         {list.map((car) => (
-          <li key={car._id} className="card">
+          <li key={car._id} className="CarList__card">
             <p>{car.brand} {car.model}</p>
             <Link to={`/car/${car._id}`}>
               <img src={car.pictures[0]} alt={car.brand} />
