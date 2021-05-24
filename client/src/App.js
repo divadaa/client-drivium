@@ -9,6 +9,7 @@ import WithAuthentication from './components/hocs/WithAuthentication';
 import CarId from './pages/carId';
 import Booking from './pages/booking';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <UserContext.Provider value={userContextData}>
       <div className="App">
+      <Header />
           <Switch>
             <Route exact path="/">
               {/* 1. Pintar la lista de coches del backend en la home */}

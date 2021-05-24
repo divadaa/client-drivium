@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import { Link, useHistory } from "react-router-dom";
 import format from "date-fns/format";
 import addDays from "date-fns/addDays";
-import CarList from "../components/CarList";
+import "../styles/carId.scss";
 
 const URL = "http://localhost:4000/api";
 
@@ -36,13 +36,13 @@ export default function CarsPage() {
       )
       .then((res) => {
         console.log(res.data.data);
-        history.push('/bookings');
+        history.push("/bookings");
       })
       .catch((err) => {});
   }
 
   return (
-    <div className="car__box">
+    <div className="carbox">
       <h1>Perfil de mi coche 🏎🏎🚗🚗 {product?.productName}</h1>
 
       <div className="CarList">
@@ -59,7 +59,7 @@ export default function CarsPage() {
           </div>
         ) : null}
       </div>
-      
+
       <input
         value={dateStart}
         type="date"

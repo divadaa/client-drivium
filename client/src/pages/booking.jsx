@@ -3,8 +3,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../context/User";
 import { Link } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
-import CardCar from "../components/CarList";
-import { deleteCar, addCar } from "../services/bookings";
+import "../styles/booking.scss";
+
 import Button from "../components/Button";
 import format from "date-fns/format";
 export default function Booking() {
@@ -36,25 +36,40 @@ export default function Booking() {
   console.log("MIS BOOKINGS", bookings);
   if (user) {
     return (
-      <div className="booking">
-        <h3>Mis bookings</h3>
+      <div className="page__booking">
+        <h2> Mis reservas </h2>
+
+        <div className="booking">
+
+
+
         {bookings.map((reservation) => (
           <li key={reservation._id} className="card">
-            <h3>
-              Entrega: {format(new Date(reservation.pickup), "dd/MM/yyyy")} --
+            <img src={reservation.productId.pictures?.[0]} alt={reservation.brand} class="booking-photo"/>
+            
+            <div className="info">
+            
+            <h3 className="entrega-recogida">
+              Entrega: {format(new Date(reservation.pickup), "dd/MM/yyyy")} -
               Devolución: {format(new Date(reservation.return), "dd/MM/yyyy")}
             </h3>
-            <p>BRAND:{reservation.productId.brand}</p>
-            <p>MODEL:{reservation.model}</p>
-            <p>TYPE:{reservation.type}</p>
-            <p>FUEL TYPE:{reservation.fuelType}</p>
-            <Link to={`/booking/${reservation._id}`}>
-              <img src={reservation.pictures?.[0]} alt={reservation.brand} />
-            </Link>
-            <p>TOTAL PRICE:{reservation.totalPrice}</p>
-            <button onClick={() => bookingDelete(reservation._id)}>
-              Quitar reserva
+            <p className="specs">{reservation.productId.brand}</p>
+            <p className="specs">{reservation.productId.model}</p>
+            <p className="specs">{reservation.productId.type}</p>
+            <p className="specs">{reservation.productId.fuelType}</p>
+            {/* <Link to={`/booking/${reservation._id}`}> */}
+              
+            {/* </Link> */}
+            <p className="price">Cuota a Pagar : {reservation.totalPrice} € 💶 </p>
+            
+            <button onClick={() => bookingDelete(reservation._id)} className="button">
+              Otra vez será 🗑
             </button>
+            
+
+        
+
+            </div>
           </li>
         ))}
 
@@ -64,8 +79,9 @@ export default function Booking() {
           rel="noopener noreferrer"
           target="__blank"
         >
-          PAYMENT
+          PAGO
         </a>
+      </div>
       </div>
     );
   } else {
