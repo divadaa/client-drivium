@@ -42,46 +42,50 @@ export default function CarsPage() {
   }
 
   return (
-    <div className="carbox">
+    <div className="main">
       <h1>Perfil de mi coche 🏎🏎🚗🚗 {product?.productName}</h1>
 
-      <div className="CarList">
+      <div className="carbox">
         {product ? (
           <div>
-            <p>BRAND:{product.brand}</p>
-            <p>MODEL:{product.model}</p>
-            <p>TYPE:{product.type}</p>
-            <p>FUEL TYPE:{product.fuelType}</p>
+            <p className="specsid">BRAND:{product.brand}</p>
+            <p className="specsid">MODEL:{product.model}</p>
+            <p className="specsid">TYPE:{product.type}</p>
+            <p className="specsid">FUEL TYPE:{product.fuelType}</p>
+            <p className="specsid">PRICE PER DAY:{product.pricePerDay}</p>
             <Link to={`/car/${product._id}`}>
-              <img src={product.pictures[0]} alt={product.brand} />
+              <img src={product.pictures[0]} alt={product.brand} class="id-photo"/>
             </Link>
-            <p>PRICE PER DAY:{product.pricePerDay}</p>
           </div>
         ) : null}
       </div>
 
-      <input
-        value={dateStart}
-        type="date"
-        min={format(addDays(new Date(), 1), "yyyy-MM-dd")}
-        onChange={(e) => {
-          setDateStart(e.target.value);
-        }}
-      />
 
-      <input
-        disabled={!dateStart}
-        value={dateEnd}
-        type="date"
-        min={
-          dateStart ? format(addDays(new Date(dateStart), 1), "yyyy-MM-dd") : ""
-        }
-        onChange={(e) => {
-          setDateEnd(e.target.value);
-        }}
-      />
+       ENTREGA:  <input className="calendar"
+          value={dateStart} 
+          type="date" 
+          min={format(addDays(new Date(), 1), "yyyy-MM-dd")} 
+          onChange={(e) => {
+            setDateStart(e.target.value); 
+          }} 
+        />
 
-      <button onClick={postBooking}>booking</button>
+        RECOGIDA:  <input className="calendar"
+          disabled={!dateStart}
+          value={dateEnd}
+          type="date"
+          min={
+            dateStart
+              ? format(addDays(new Date(dateStart), 1), "yyyy-MM-dd")
+              : ""
+          }
+          onChange={(e) => {
+            setDateEnd(e.target.value);
+          }}
+        />
+      {/* </div> */}
+
+      <button onClick={postBooking} className="button">Vamos a conducir</button>
     </div>
   );
 }

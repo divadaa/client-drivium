@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
 .card {
+  font-family: "Share Tech Mono", monospace;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -10,12 +13,14 @@
 }
 
 .info {
+  font-family: "Share Tech Mono", monospace;
   padding: 30px;
   position: relative;
   width: 100%;
 }
 
 .booking-photo {
+  font-family: "Share Tech Mono", monospace;
   width: 220px;
   height: auto;
   box-sizing: border-box;
@@ -23,6 +28,7 @@
 }
 
 .specs {
+  font-family: "Share Tech Mono", monospace;
   display: inline-flex;
   -webkit-box-align: center;
   align-items: center;
@@ -33,12 +39,11 @@
   max-width: 300px;
   border-radius: 14px;
   box-shadow: rgb(195 205 224 / 40%) 0px 2px 14px 0px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-transform: capitalize;
 }
 
 .price {
+  font-family: "Share Tech Mono", monospace;
   color: #2b3647;
   font-weight: 700;
   font-size: 23px;
@@ -46,6 +51,7 @@
 }
 
 .entrega-recogida {
+  font-family: "Share Tech Mono", monospace;
   background-clip: padding-box !important;
   border: 6px solid white !important;
   border-radius: 20px !important;
@@ -66,7 +72,7 @@
   -webkit-box-align: ce;
   align-items: center;
   justify-content: center;
-  font-family: revert;
+  font-family: "Share Tech Mono", monospace;
   font-size: 16px;
   letter-spacing: 1px;
   line-height: 26px;
@@ -92,7 +98,7 @@
     max-width: 300px;
     border-radius: 14px;
     box-shadow: rgb(195 205 224 / 40%) 0px 2px 14px 0px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Share Tech Mono", monospace;
     text-transform: capitalize;
     min-width: 84px;
     display: inline-block;
@@ -103,3 +109,20 @@
     font-size: large;
     color: #2b3647;
 }
+
+
+// .info {
+//     font-family: "Share Tech Mono", monospace;
+//     padding: 14px;
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+//     resize: auto;
+//     margin: 45px;
+//     align-content: center;
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: nowrap;
+//     justify-content: center;
+//     align-items: baseline;
+// }
