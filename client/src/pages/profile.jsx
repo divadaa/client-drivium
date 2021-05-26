@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/User";
+import "../styles/profile.scss";
 
 import Button from "../components/Button";
 import { Redirect } from "react-router-dom";
@@ -26,28 +27,30 @@ export default function Profile() {
 
   if (user) {
     return (
-      <div className="profile__box">
-        <h1>Mi perfil 😀😀{user?.name}</h1>
+      <div className="profilebox">
+        <h1>Los datos de 🗂 {user?.name}</h1>
 
         <div className="userdata">
           {user ? (
             <div>
-              <p>
-                Name: {user.name} {user.surname}
+              <p className="userspecs">
+               👀 Name: {user.name} {user.surname}
               </p>
-              <p>email:{user.email}</p>
-              <p>phone:{user.phone}</p>
-              <p>address:{user.address}</p>
-              <p>city:{user.city}</p>
-              <p>creditCard:{hideLetters(user.creditCard)}</p>
+              <p className="userspecs"> 📧 email: {user.email}</p>
+              <p className="userspecs"> ☎️ phone: {user.phone}</p>
+              <p className="userspecs"> 🏠 address: {user.address}</p>
+              <p className="userspecs"> 🏙 city: {user.city}</p>
+              <p className="userspecs"> 💳 creditCard: {hideLetters(user.creditCard)}</p>
             </div>
           ) : null}
         </div>
 
         <div>
-          <Button onClick={logout} text="Cerrar sesión" />
+          <Button className="buttonprofile" onClick={logout} text="Adiós amigos 👋" />
         </div>
-      </div>
+        </div>
+
+
     );
   } else {
     return <Redirect to="/login" />;
