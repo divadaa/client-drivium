@@ -5,9 +5,8 @@ import "./styles.scss";
 function CarList({ list, loadCar }) {
   console.log(list);
   return (
-    // <React.Fragment></React.Fragment>
     <>
-      <ul className="CarList">
+      <ul className="carList">
         {list.map((car) => (
           <li key={car._id} className="carspecs">
             <p className="brandmodel">
@@ -16,16 +15,13 @@ function CarList({ list, loadCar }) {
             <Link to={`/car/${car._id}`}>
               <img src={car.pictures[0]} alt={car.brand} className="img" />
             </Link>
-
             <p className="specslist">{car.type}</p>
             <p className="specslist">{car.fuelType}</p>
-            Por día 
+            Por día
             <p className="specslist">{car.pricePerDay} € </p>
-            
             <p>
               {car.availability} {car.extras[0]}{" "}
             </p>
-
             <Link className="buttontoid" to={`/car/${car._id}`}>
               {" "}
               Detalles
@@ -33,8 +29,6 @@ function CarList({ list, loadCar }) {
           </li>
         ))}
       </ul>
-
-      {/* <button onClick={loadCar}>Añadir coches</button> */}
     </>
   );
 }

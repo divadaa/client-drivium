@@ -20,39 +20,74 @@
   align-content: space-between;
 }
 
-.id-photo {
-  border-radius: 10%;
-  max-width: 60%;
-  height: auto;
-  vertical-align: text-top;
-  border-style: none;
+.titleid {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 40px;
+  font-style: italic;
+  margin-inline: 5px;
+  margin-top: 25px;
 }
 
-// .specslist {
-//   background: #f2d900;
-//   text-align: center;
-//   color: #000;
-//   padding: 13px 10px;
-//   font-size: 50px;
-//   text-align: center;
-//   border-radius: 70px 30px 30px 30px;
-//   font-size: 50px;
-//   font-family: "Share Tech Mono", monospace;
-//   display: inline-flex;
-//   align-items: center;
-//   margin: 33px 35px 25px 35px;
-//   max-width: 300px;
-//   box-shadow: rgb(195 205 224 / 40%) 0px 2px 14px 0px;
-//   text-transform: capitalize;
-// }
+.box {
+  padding: 24px, 10px;
+  border: 1px solid rgba(102, 102, 101, 0.2);
+  background-image: linear-gradient(167deg, #3c4c65 466px, #fff 291px);
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: inherit;
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 1;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-evenly;
+}
 
-// .brandmodel {
-//   text-transform: uppercase;
-//   font-size: 18px;
-// }
+.colum1 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: inherit;
+  padding: 130px;
+  margin: 0;
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 1;
+}
+.id-photo {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px;
+}
 
-.button {
-  margin: auto;
+.infoscar {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.colum2 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px 0 rgb(0 0 0 / 25%);
+  padding: 22px 25px 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.buttonid {
+  margin: 20px;
   width: 100%;
   height: 31px;
   display: flex;
@@ -78,33 +113,24 @@
   border-radius: 60px;
   padding: 24px;
   box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
-  margin: auto;
+  margin: 45px;
 }
 
 .carbox {
-  border: 3px solid grey;
   border-radius: 20px;
   margin: auto;
 }
 
-// .main {
-//   @extend .flex-global;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: flex-start;
-//   width: 100%;
-//   height: auto;
-//   background-color: #e2ebef;
-// }
-
 .specsid {
+  font-family: "Share Tech Mono", monospace;
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  padding: 13px 10px;
+  margin: 0px 25px 15px 0px;
+  width: auto;
+  max-width: 300px;
+  border-radius: 14px;
+  box-shadow: rgb(195 205 224 / 40%) 0px 2px 14px 0px;
   text-transform: capitalize;
-  border: 1px solid #dddddd !important;
-  border-radius: 30px !important;
-  height: 100% !important;
-  padding: 30px 56px !important;
-  width: 50% !important;
-  box-sizing: border-box;
-  white-space: initial;
-  margin-right: initial;
 }

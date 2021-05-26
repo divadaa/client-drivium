@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
-.CarList {
+.carList {
   text-transform: capitalize;
   font-family: "Share Tech Mono", monospace;
   border-radius: 0.25rem !important;
@@ -23,6 +23,7 @@
   border: 1px grey solid;
   border-radius: 20px;
   margin: 20px;
+  background-color: #e9feff;
 }
 .img {
   max-width: 50%;

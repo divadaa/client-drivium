@@ -43,23 +43,35 @@ export default function CarsPage() {
 
   return (
     <div className="main">
-      <h1>Perfil de mi coche 🏎🏎🚗🚗 {product?.productName}</h1>
+      <div className="titleid">🚗 Perfil de mi coche 🏎 {product?.productName}</div>
 
       <div className="carbox">
+        <div className="box">
         {product ? (
-          <div>
+
+          <div className="colum1">
+              <Link to={`/car/${product._id}`}>
+              <img src={product.pictures[0]} alt={product.brand} class="id-photo"/>
+            </Link>
+
+            <p className="infoscar">Esta es la información y especificaciones de nuestro coche</p>
+          <div/>
+          
+
+
+          <div className="colum2">
             <p className="specsid">BRAND:{product.brand}</p>
             <p className="specsid">MODEL:{product.model}</p>
             <p className="specsid">TYPE:{product.type}</p>
             <p className="specsid">FUEL TYPE:{product.fuelType}</p>
             <p className="specsid">PRICE PER DAY:{product.pricePerDay}</p>
-            <Link to={`/car/${product._id}`}>
-              <img src={product.pictures[0]} alt={product.brand} class="id-photo"/>
-            </Link>
+
+          </div>
           </div>
         ) : null}
-      </div>
-
+        </div>
+        </div>
+        
 
        ENTREGA:  <input className="calendar"
           value={dateStart} 
@@ -85,7 +97,7 @@ export default function CarsPage() {
         />
       {/* </div> */}
 
-      <button onClick={postBooking} className="button">Vamos a conducir</button>
+      <button onClick={postBooking} className="buttonid">Vamos a conducir</button>
     </div>
   );
 }
