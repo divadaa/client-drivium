@@ -1,77 +1,60 @@
-// :root {
-//   --color-offwhite-text: #e2ebef;
-//   --color-gray-background: rgb(82, 82, 82);
+// .header__logo{
 
-//   .Header {
-//     background: url("https://tupaitravel.es/wp-content/uploads/2020/01/2019-aston-martin-feature-uae-2.jpeg");
+//     display: block;
+//     margin: 0 auto;
+//     width: auto;
+//     max-width: 100%;
+//     height: auto;
 
-//     text-align: center;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     width: 100%;
-//     padding: 1rem 0;
 
-//     &__logo {
-//       display: flex;
-//       justify-content: space-between;
-//       width: 40%;
-
-//       margin: 0;
-//     }
-//   }
-
-//   &__button {
-//     color: var(--color-offwhite-text);
-//     margin: 2rem 0;
-//     text-decoration: none;
-//   }
-
-//   @media screen and (max-width: 576px) {
-//     .Header__list {
-//       & > li {
-//         display: block;
-//       }
-//     }
-//   }
 // }
 
+
+
 .header {
+  background-color: #2d9583;
+  color: aquamarine;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
 
-    border: 1px solid;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-    flex-wrap: nowrap;
-    align-items: stretch;
+//   &__logo {
+//     display: block;
+//     margin: 0px auto;
+//     width: 300px;
+//     max-width: 100%;
+//     height: auto;
+    &__list {
+      color: var(--color-offwhite-text);
+      margin: 2rem 0;
+      text-decoration: none;
+      font-size: 1rem;
 
-//   background: url("https://tupaitravel.es/wp-content/uploads/2020/01/2019-aston-martin-feature-uae-2.jpeg");
-//   box-shadow: 0 1px 1px #ccc;
-//   padding: 20px 40px;
-//   height: 80px;
-//   color: #ffffff;
-//   box-sizing: border-box;
+      & > li {
+        display: inline;
+        margin: 0 1rem;
 
-  &__logo {
-    width: 170px;
-    height: 50px;
-    // display: flex;
-    // justify-content: space-between;
-    // width: 40%;
+        & > a {
+          color: var(--color-offwhite-text);
 
-    // margin: 0;
-  }
-}
-
-
-
-
-
-@media screen and (max-width: 576px) {
-  .Header__list {
-    & > li {
-      display: block;
+          &:active {
+            color: var(--color-offwhite-text);
+          }
+        }
+      }
     }
   }
-}
+
+  @media screen and (max-width: 576px) {
+    .Header__list {
+      & > li {
+        display: block;
+      }
+    }
+  }
+// }

@@ -4,12 +4,13 @@
   font-family: "Share Tech Mono", monospace;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
   display: flex;
   max-width: 100%;
-  margin: 20px;
+  margin: 89px;
   overflow: hidden;
-  width: 700px;
+  width: 755px;
+  margin-top: 10px;
 }
 
 .info {
@@ -88,41 +89,32 @@
 }
 
 .buttoncart {
-
-    margin: auto;
-    align-items: center;
-    background: lightblue;
-    padding: 13px 10px;
-    margin: 0px 25px 15px 0px;
-    width: auto;
-    max-width: 300px;
-    border-radius: 14px;
-    box-shadow: rgb(195 205 224 / 40%) 0px 2px 14px 0px;
-    font-family: "Share Tech Mono", monospace;
-    text-transform: capitalize;
-    min-width: 84px;
-    display: inline-block;
-    margin-left: 9px;
-    flex: 0 0 auto;
-    border-bottom-style: initial;
-    border-bottom-color: currentcolor;
-    font-size: large;
-    color: #2b3647;
+  margin: auto;
+  align-items: center;
+  background: lightblue;
+  padding: 10px 10px;
+  margin: 0px 15px 25px 0px;
+  width: auto;
+  max-width: 300px;
+  border-radius: 14px;
+  box-shadow: rgb(195 205 224 / 40%) 0px 2px 14px 0px;
+  font-family: "Share Tech Mono", monospace;
+  text-transform: capitalize;
+  min-width: 84px;
+  display: inline-block;
+  margin-left: 9px;
+  flex: 0 0 auto;
+  border-bottom-style: initial;
+  border-bottom-color: currentcolor;
+  font-size: large;
+  color: #2b3647;
+  margin-top: -20px;
 }
 
-
-// .info {
-//     font-family: "Share Tech Mono", monospace;
-//     padding: 14px;
-//     position: relative;
-//     width: 100%;
-//     height: auto;
-//     resize: auto;
-//     margin: 45px;
-//     align-content: center;
-//     display: flex;
-//     flex-direction: column;
-//     flex-wrap: nowrap;
-//     justify-content: center;
-//     align-items: baseline;
-// }
+.title {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 40px;
+  font-style: italic;
+  margin-inline: 5px;
+  margin-top: 25px;
+}

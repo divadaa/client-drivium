@@ -23,7 +23,9 @@ function Car({}) {
 
   return (
     <section className="main">
-      <h3>Estos son los Coches</h3>
+      <p className="titlehome">Nuestros coches</p>
+      
+      <p className="titledescription">Premium, garantizados y con un equipamiento excepcional</p>
 
       <CarList list={carList} loadCar={loadCar} />
     </section>

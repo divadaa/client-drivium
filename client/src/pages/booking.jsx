@@ -37,7 +37,7 @@ export default function Booking() {
   if (user) {
     return (
       <div className="page__booking">
-        <h2> Mis reservas </h2>
+        <p className="title"> Mis reservas </p>
 
         <div className="booking">
 
@@ -50,9 +50,11 @@ export default function Booking() {
             <div className="info">
             
             <h3 className="entrega-recogida">
-              Entrega: {format(new Date(reservation.pickup), "dd/MM/yyyy")} -
+              Entrega: {format(new Date(reservation.pickup), "dd/MM/yyyy")} - 
               Devolución: {format(new Date(reservation.return), "dd/MM/yyyy")}
             </h3>
+
+          
             <p className="specs">{reservation.productId.brand}</p>
             <p className="specs">{reservation.productId.model}</p>
             <p className="specs">{reservation.productId.type}</p>
