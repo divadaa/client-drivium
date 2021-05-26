@@ -5,7 +5,6 @@ import "./styles.scss";
 import logo from "../../assets/logo.png";
 import Picture from "../Pictures";
 
-
 export default function Header() {
   return (
     <header className="header">
@@ -16,36 +15,13 @@ export default function Header() {
       </div> */}
 
       <ul className="header__list">
-      <li className="listHeaderItem">
-      <Link to="/login">
-          {" "}
-          Login
-        </Link>
-       </li>
-       <li className="listHeaderItem">
-       <Link to="/profile">
-          {" "}
-          Register
-        </Link>
-       </li>
-       </ul>
-
-
-      {/* <div className="header__button">
-        <Link to="/login">
-          {" "}
-          Login
-        </Link>
-      </div>
-
-      <div className="header__button">
-        <Link  to="/profile">
-          {" "}
-          Profile
-        </Link>
-      </div> */}
+        <li className="listHeaderItem">
+          <Link to="/bookings"> Reservas</Link>
+        </li>
+        <li className="listHeaderItem">
+          <Link to="/profile"> Profile</Link>
+        </li>
+      </ul>
     </header>
   );
 }
-
-

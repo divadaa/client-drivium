@@ -16,7 +16,7 @@ export function useUser() {
   useEffect(() => {
     getProfile()
       .then((user) => {
-          setUser(user);
+        setUser(user);
       })
       .finally(() => {
         setLoading(false);

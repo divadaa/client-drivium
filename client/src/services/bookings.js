@@ -1,8 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-
-const URL = 'http://localhost:4000/'
-
+const URL = "http://localhost:4000/";
 
 export const deleteCar = async (carId) => {
   try {
@@ -22,7 +20,7 @@ export const deleteCar = async (carId) => {
 export const addCar = async (carId) => {
   try {
     const response = await axios.put(`${URL}/bookings/add/${carId}`, {
-      withCredentials: true
+      withCredentials: true,
     });
 
     return response.data.data;

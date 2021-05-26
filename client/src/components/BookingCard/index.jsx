@@ -1,10 +1,7 @@
+import { useEffect, useState } from "react";
+import "./styles.scss";
 
-import { useEffect, useState } from 'react';
-import './styles.scss';
-
-const prebooking = [
-{}
-];
+const prebooking = [{}];
 
 export default function Booking() {
   const [booking, setBooking] = useState([]);

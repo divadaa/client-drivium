@@ -1,62 +1,53 @@
-import { Route, Switch } from 'react-router-dom';
-import { UserContext, useUser } from './context/User';
+import { Route, Switch } from "react-router-dom";
+import { UserContext, useUser } from "./context/User";
 
-// import Car from './pages/car';
-import Home from './pages/home';
-import Login from './pages/login';
-import Profile from './pages/profile';
-import WithAuthentication from './components/hocs/WithAuthentication';
-import CarId from './pages/carId';
-import Booking from './pages/booking';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Home from "./pages/home";
+import Login from "./pages/login";
+import Profile from "./pages/profile";
+import WithAuthentication from "./components/hocs/WithAuthentication";
+import CarId from "./pages/carId";
+import Booking from "./pages/booking";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
-import './App.css';
+import "./App.css";
 
 function App() {
-  // Usamos el hook customizado useUser
   const userContextData = useUser();
 
   return (
     <UserContext.Provider value={userContextData}>
       <div className="App">
-      <Header />
-          <Switch>
-            <Route exact path="/">
-              {/* 1. Pintar la lista de coches del backend en la home */}
-              <Home />
-            </Route>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-            <Route exact path="/profile">
-              <WithAuthentication>
-                <Profile />
-              </WithAuthentication>
-            </Route>
+          <Route exact path="/profile">
+            <WithAuthentication>
+              <Profile />
+            </WithAuthentication>
+          </Route>
 
-            <Route exact path="/car/:carId">
-              {/* 2. 3. Traer un solo coche por su id y permitir crear un booking */}
-              <CarId />
-            </Route>
+          <Route exact path="/car/:carId">
+            <CarId />
+          </Route>
 
-            {/* 4. Crear ruta protegida /booking que liste los bookings del user */}
+          <Route exact path="/bookings">
+            <WithAuthentication>
+              <Booking />
+            </WithAuthentication>
+          </Route>
 
-            <Route exact path="/bookings">
-              <WithAuthentication>
-                <Booking />
-              </WithAuthentication>
-            </Route>
-
-            {/* 5. Añadir mejor maquetación al proyecto */}
-            <Route exact path="/login">
-              <Login /> 
-            </Route>
-          </Switch>  
-          <Footer />    
+          <Route exact path="/login">
+            <Login />
+          </Route>
+        </Switch>
+        <Footer />
       </div>
     </UserContext.Provider>
   );
 }
 
-export default App; 
-
-
+export default App;

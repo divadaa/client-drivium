@@ -1,12 +1,9 @@
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "../context/User";
 import "../styles/profile.scss";
 
 import Button from "../components/Button";
 import { Redirect } from "react-router-dom";
-
-const URL = "http://localhost:4000/api";
 
 function hideLetters(cc) {
   let hiddenCc = "";
@@ -34,23 +31,28 @@ export default function Profile() {
           {user ? (
             <div>
               <p className="userspecs">
-               👀 Name: {user.name} {user.surname}
+                👀 Name: {user.name} {user.surname}
               </p>
               <p className="userspecs"> 📧 email: {user.email}</p>
               <p className="userspecs"> ☎️ phone: {user.phone}</p>
               <p className="userspecs"> 🏠 address: {user.address}</p>
               <p className="userspecs"> 🏙 city: {user.city}</p>
-              <p className="userspecs"> 💳 creditCard: {hideLetters(user.creditCard)}</p>
+              <p className="userspecs">
+                {" "}
+                💳 creditCard: {hideLetters(user.creditCard)}
+              </p>
             </div>
           ) : null}
         </div>
 
         <div>
-          <Button className="buttonprofile" onClick={logout} text="Adiós amigos 👋" />
+          <Button
+            className="buttonprofile"
+            onClick={logout}
+            text="Adiós amigos 👋"
+          />
         </div>
-        </div>
-
-
+      </div>
     );
   } else {
     return <Redirect to="/login" />;

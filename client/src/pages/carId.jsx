@@ -25,8 +25,6 @@ export default function CarsPage() {
       .catch((err) => {});
   }, [carId]);
 
-  // CREAR POST BOOKING AQUI
-
   function postBooking() {
     axios
       .post(
@@ -43,61 +41,63 @@ export default function CarsPage() {
 
   return (
     <div className="main">
-      <div className="titleid">🚗 Perfil de mi coche 🏎 {product?.productName}</div>
-
+      <div className="titleid">
+        🚗 Perfil de mi coche 🏎 {product?.productName}
+      </div>
       <div className="carbox">
         <div className="box">
-        {product ? (
-
-          <div className="colum1">
+          {product ? (
+            <div className="colum1">
               <Link to={`/car/${product._id}`}>
-              <img src={product.pictures[0]} alt={product.brand} class="id-photo"/>
-            </Link>
+                <img
+                  src={product.pictures[0]}
+                  alt={product.brand}
+                  class="id-photo"
+                />
+              </Link>
 
-            <p className="infoscar">Esta es la información y especificaciones de nuestro coche</p>
-          <div/>
-          
+              <p className="infoscar">
+                Esta es la información y especificaciones de nuestro coche
+              </p>
+              <div />
 
-
-          <div className="colum2">
-            <p className="specsid">BRAND:{product.brand}</p>
-            <p className="specsid">MODEL:{product.model}</p>
-            <p className="specsid">TYPE:{product.type}</p>
-            <p className="specsid">FUEL TYPE:{product.fuelType}</p>
-            <p className="specsid">PRICE PER DAY:{product.pricePerDay}</p>
-
-          </div>
-          </div>
-        ) : null}
+              <div className="colum2">
+                <p className="specsid">BRAND:{product.brand}</p>
+                <p className="specsid">MODEL:{product.model}</p>
+                <p className="specsid">TYPE:{product.type}</p>
+                <p className="specsid">FUEL TYPE:{product.fuelType}</p>
+                <p className="specsid">PRICE PER DAY:{product.pricePerDay}</p>
+              </div>
+            </div>
+          ) : null}
         </div>
-        </div>
-        
-
-       ENTREGA:  <input className="calendar"
-          value={dateStart} 
-          type="date" 
-          min={format(addDays(new Date(), 1), "yyyy-MM-dd")} 
-          onChange={(e) => {
-            setDateStart(e.target.value); 
-          }} 
-        />
-
-        RECOGIDA:  <input className="calendar"
-          disabled={!dateStart}
-          value={dateEnd}
-          type="date"
-          min={
-            dateStart
-              ? format(addDays(new Date(dateStart), 1), "yyyy-MM-dd")
-              : ""
-          }
-          onChange={(e) => {
-            setDateEnd(e.target.value);
-          }}
-        />
-      {/* </div> */}
-
-      <button onClick={postBooking} className="buttonid">Vamos a conducir</button>
+      </div>
+      ENTREGA:{" "}
+      <input
+        className="calendar"
+        value={dateStart}
+        type="date"
+        min={format(addDays(new Date(), 1), "yyyy-MM-dd")}
+        onChange={(e) => {
+          setDateStart(e.target.value);
+        }}
+      />
+      RECOGIDA:{" "}
+      <input
+        className="calendar"
+        disabled={!dateStart}
+        value={dateEnd}
+        type="date"
+        min={
+          dateStart ? format(addDays(new Date(dateStart), 1), "yyyy-MM-dd") : ""
+        }
+        onChange={(e) => {
+          setDateEnd(e.target.value);
+        }}
+      />
+      <button onClick={postBooking} className="buttonid">
+        Vamos a conducir
+      </button>
     </div>
   );
 }

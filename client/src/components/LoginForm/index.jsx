@@ -1,10 +1,6 @@
 import { useContext } from "react";
-
 import { useForm } from "react-hook-form";
-
 import { UserContext } from "../../context/User";
-
-import Button from "../Button";
 
 import "./styles.scss";
 
@@ -21,12 +17,13 @@ export default function LoginForm() {
   };
 
   return (
-    <>
+    <div className="profileboxlogin">
       <h2>Hola</h2>
       <h4>Sign In</h4>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email: </label>
         <input
+          className="inputbox"
           type="email"
           id="email"
           name="email"
@@ -39,8 +36,9 @@ export default function LoginForm() {
           <p>Email field is required</p>
         ) : null}
         <br />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Password: </label>
         <input
+          className="inputbox"
           type="password"
           id="password"
           name="password"
@@ -51,12 +49,14 @@ export default function LoginForm() {
         ) : null}
         <br />
 
-        <button type="submit">Login</button>
+        <button type="submit" className="buttonlogin">
+          Login
+        </button>
       </form>
 
       <div className="user__registerLink">
         <h5>No eres usuario, registrate aquí</h5>
       </div>
-    </>
+    </div>
   );
 }
