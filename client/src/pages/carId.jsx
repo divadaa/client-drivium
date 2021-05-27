@@ -1,7 +1,8 @@
 import axios from "axios";
 import React from "react";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useEffect, useState, useContext } from "react";
+import { useParams, Redirect } from "react-router";
+import { UserContext } from "../context/User";
 import { Link, useHistory } from "react-router-dom";
 import format from "date-fns/format";
 import addDays from "date-fns/addDays";
@@ -15,6 +16,9 @@ export default function CarsPage() {
   const [dateEnd, setDateEnd] = useState("");
   const { carId } = useParams();
   const history = useHistory();
+  const { user } = useContext(UserContext);
+
+
 
   useEffect(() => {
     axios
@@ -25,7 +29,13 @@ export default function CarsPage() {
       .catch((err) => {});
   }, [carId]);
 
+
+
+
   function postBooking() {
+    // if (!user) {
+    //   return <Redirect to="/login" />;
+    // } 
     axios
       .post(
         `${URL}/booking`,
@@ -37,6 +47,7 @@ export default function CarsPage() {
         history.push("/bookings");
       })
       .catch((err) => {});
+
   }
 
   return (
@@ -57,7 +68,7 @@ export default function CarsPage() {
               </Link>
 
               <p className="infoscar">
-                Esta es la información y especificaciones de nuestro coche
+                 {product.info}
               </p>
               <div />
 
