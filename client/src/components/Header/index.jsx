@@ -8,20 +8,25 @@ import Picture from "../Pictures";
 export default function Header() {
   return (
     <header className="header">
-      {/* <div className="header__logo">
+    <div className="headerlogo">
         <Link to="/">
-          <Picture picture={logo} name={logo}  />;
+          <Picture picture={logo} name={logo} />;
         </Link>
-      </div> */}
+      </div>
 
-      <ul className="header__list">
+      <ul className="headerlist">
+        <li className="listHeaderItem">
+          <Link to="/login"> Login</Link>
+        </li>
         <li className="listHeaderItem">
           <Link to="/bookings"> Reservas</Link>
         </li>
-        <li className="listHeaderItem">
-          <Link to="/profile"> Profile</Link>
-        </li>
-      </ul>
-    </header>
+    </ul>
+
+
+    </header> 
   );
+
 }
+
+

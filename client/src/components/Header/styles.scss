@@ -1,60 +1,27 @@
-// .header__logo{
-
-//     display: block;
-//     margin: 0 auto;
-//     width: auto;
-//     max-width: 100%;
-//     height: auto;
-
-
-// }
-
-
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
 .header {
-  background-color: #2d9583;
-  color: aquamarine;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: 1rem 0;
-  flex-wrap: wrap;
-  align-content: stretch;
-  justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #486b6b;
+    height: 160px;
+    padding: 10px 30px;;
+}
 
-//   &__logo {
-//     display: block;
-//     margin: 0px auto;
-//     width: 300px;
-//     max-width: 100%;
-//     height: auto;
-    &__list {
-      color: var(--color-offwhite-text);
-      margin: 2rem 0;
-      text-decoration: none;
-      font-size: 1rem;
+.headerlogo {
+  justify-content: flex-start;
+}
 
-      & > li {
-        display: inline;
-        margin: 0 1rem;
+.listHeaderItem {
+	display:inline-block;
+	color:#fff;
+	text-decoration:none;
+	padding:10px 20px;
+	line-height:normal;
+	font-size:20px;
+    font-weight:bold;
+    
+  
 
-        & > a {
-          color: var(--color-offwhite-text);
+}
 
-          &:active {
-            color: var(--color-offwhite-text);
-          }
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 576px) {
-    .Header__list {
-      & > li {
-        display: block;
-      }
-    }
-  }
-// }
