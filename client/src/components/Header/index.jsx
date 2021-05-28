@@ -16,10 +16,10 @@ export default function Header() {
 
       <ul className="headerlist">
         <li className="listHeaderItem">
-          <Link to="/login"> Login </Link>
+          <Link to="/login" className="colorfont"> Login </Link>
         </li>
         <li className="listHeaderItem">
-          <Link to="/bookings"> Reservas</Link>
+          <Link to="/bookings" className="colorfont"> Reservas</Link>
         </li>
       </ul>
     </header>
