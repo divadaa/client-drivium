@@ -15,16 +15,16 @@
   align-items: center;
   width: 100%;
   height: auto;
-  background-color: #d9f0f1;
+  background-color: #d2d2d2;
   flex-wrap: wrap;
   align-content: space-between;
 }
-
 .titleid {
   font-family: "Share Tech Mono", monospace;
-  font-size: 60px;
+  font-size: 65px;
   margin-inline: 5px;
-  margin-top: 15px;
+  margin-top: 8px;
+  font-style: italic;
 }
 
 .box {
@@ -132,4 +132,8 @@
   border-radius: 14px;
   box-shadow: rgb(195 205 224 / 40%) 0px 2px 14px 0px;
   text-transform: capitalize;
+}
+
+.imgtitle {
+  width: 110px;
 }

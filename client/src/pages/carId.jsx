@@ -18,8 +18,6 @@ export default function CarsPage() {
   const history = useHistory();
   const { user } = useContext(UserContext);
 
-
-
   useEffect(() => {
     axios
       .get(`${URL}/car/${carId}`)
@@ -29,13 +27,7 @@ export default function CarsPage() {
       .catch((err) => {});
   }, [carId]);
 
-
-
-
   function postBooking() {
-    // if (!user) {
-    //   return <Redirect to="/login" />;
-    // } 
     axios
       .post(
         `${URL}/booking`,
@@ -47,13 +39,17 @@ export default function CarsPage() {
         history.push("/bookings");
       })
       .catch((err) => {});
-
   }
 
   return (
     <div className="main">
       <div className="titleid">
-        🚗 Perfil de mi coche 🏎 {product?.productName}
+        Perfil de mi coche {product?.productName}
+        <img
+          className="imgtitle"
+          alt=""
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaz0Nlkjx8qxAsvciYQAR_y4WDmetrv9uwgg&usqp=CAU"
+        />
       </div>
       <div className="carbox">
         <div className="box">
@@ -67,9 +63,7 @@ export default function CarsPage() {
                 />
               </Link>
 
-              <p className="infoscar">
-                 {product.info}
-              </p>
+              <p className="infoscar">{product.info}</p>
               <div />
 
               <div className="colum2">
